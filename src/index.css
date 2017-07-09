@@ -1,0 +1,270 @@
+:root {
+  --blue: #64b5f6;
+  --red: #f06292;
+  --green: #81c784;
+  --yellow: #fff176;
+  --black: #212121;
+  --gray: rgba(206, 206, 206, 0.50);
+  --white: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
+/* Always hide element with hidden attribute. */
+*[hidden] {
+  display: none;
+}
+
+/* 
+  1. Show text content immediately instead of waiting for the desired font to load
+  2. Take the entire screen.
+*/
+html,
+body {
+  font-family: "Helvetica", "Arial", sans-serif; /* 1 */
+  width: 100%; /* 2 */
+  color: var(--black);
+}
+
+html {
+  height: 100%; /* 2 */
+}
+
+body {
+  min-height: 100%; /* 2 */
+  margin: 0;
+}
+
+/* Type */
+.TextBody {
+  font-weight: 400;
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
+  font-size: 100%;
+  line-height: 1.6rem;
+}
+
+.Subheading,
+.Headline {
+  font-weight: 500;
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
+}
+
+.Subheading {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.Title {
+  font-size: 1.25rem;
+  line-height: 1.4375rem;
+}
+
+.Headline {
+  font-size: 1.25rem;
+  line-height: 1.5625rem;
+}
+
+.Disp1 {
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+}
+
+.Disp2 {
+  font-size: 2.25rem;
+  line-height: 2.8125rem;
+}
+
+.Disp3 {
+  font-size: 3rem;
+  line-height: 3.75rem;
+}
+
+.Disp4 {
+  font-size: 4rem;
+  line-height: 5rem;
+}
+
+.Disp1,
+.Disp2,
+.Disp3,
+.Disp4,
+.Title {
+  font-weight: 700;
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
+}
+
+.Disp1,
+.Disp2,
+.Disp3,
+.Disp4,
+.Subheading,
+.Title,
+.Headline,
+.TextBody {
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+/* Adding colorful underline */
+.Line {
+  position: relative;
+  z-index: 1;
+}
+
+.Line::after {
+  content: " ";
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  height: 10px;
+  width: 110%;
+  background-color: var(--black);
+  border-radius: 10px;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.Line.primary::after {
+  background-color: var(--blue);
+}
+
+.Line.alert::after {
+  background-color: var(--red);
+}
+
+.Line.success::after {
+  background-color: var(--green);
+}
+
+.Line.warning::after {
+  background-color: var(--yellow);
+}
+
+.Line.thin::after {
+  height: 6px;
+}
+
+.Linebr {
+  border: 0;
+  height: 10px;
+  border-radius: 10px;
+  background-color: var(--green);
+  width: 75%;
+  max-width: 1024px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Containers */
+.Drama {
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+  padding: 16px;
+  min-height: 75vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spacing */
+.TextSpace {
+  margin: 8px;
+}
+
+.TextSpace.md {
+  margin: 16px;
+}
+
+.TextSpace.lg {
+  margin: 32px;
+}
+
+/* Utilities */
+.uTextCenter {
+  text-align: center;
+}
+
+.Btn {
+  font-weight: 500;
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
+  position: relative;
+  outline: none;
+  font-size: 20px;
+  color: var(--black);
+  background-color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 5px 30px;
+  text-align: center;
+  min-width: 100px;
+  border: 2px solid var(--black);
+  border-radius: 3px;
+  overflow: hidden;
+  vertical-align: middle;
+  letter-spacing: 0;
+}
+
+.Btn:hover,
+.Btn:focus {
+  background-color: #e0e0e0;
+}
+
+.Btn.warning,
+.Btn.success,
+.Btn.accent,
+.Btn.primary {
+  border-color: transparent;
+}
+
+.Btn.warning:hover,
+.Btn.warning:focus,
+.Btn.success:hover,
+.Btn.success:focus,
+.Btn.accent:hover,
+.Btn.accent:focus,
+.Btn.primary:hover,
+.Btn.primary:focus {
+  opacity: 0.5;
+}
+
+.Btn.warning[disabled],
+.Btn.success[disabled],
+.Btn.accent[disabled],
+.Btn.primary[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.Btn.primary {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.Btn.accent {
+  background-color: var(--red);
+  color: #fff;
+}
+
+.Btn.success {
+  background-color: var(--green);
+  color: #fff;
+}
+
+.Btn.warning {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+button.Btn,
+input.Btn[type="submit"] {
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.Shadow {
+  box-shadow: 0 3px 3px 0.2px rgba(33, 33, 33, 0.22), 0 0 5px 1px rgba(33, 33, 33, 0.05);
+}
+
