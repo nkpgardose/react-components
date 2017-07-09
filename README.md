@@ -36,6 +36,7 @@ and scripts into the app directory. If you do this, you can’t go back!
 We suggest that you begin by typing:
 ```
 $ cd sample-components
+$ yarn install # install JS packages
 $ yarn start
 ```
 
